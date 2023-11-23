@@ -24,4 +24,4 @@ jobs:
       run: docker build . --file Dockerfile --tag ayushi250/node-test:$(date +%s)
       
     - name: Docker Push
-      run: docker push ayushi250/node-test
+      run: docker push ayushi250/private-repo
