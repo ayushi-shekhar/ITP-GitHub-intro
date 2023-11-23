@@ -21,7 +21,7 @@ jobs:
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ayushi250/node-test:$(date +%s)
+      run: docker build . --file Dockerfile --tag ayushi250/node-test
       
     - name: Docker Push
-      run: docker push ayushi250/private-repo:ayushi250/node-test:$(date +%s)
+      run: docker push ayushi250/private-repo:ayushi250/node-test
