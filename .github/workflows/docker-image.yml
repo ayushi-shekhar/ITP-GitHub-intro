@@ -19,9 +19,7 @@ jobs:
         DOCKER_USER: ${{secrets.DOCKER_USER}}
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
       run: |
-        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ayushi250/node-test
-      
-    - name: Docker Push
-      run: docker push ayushi250/private-repo:ayushi250/node-test
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+        docker build -t sample-app .
+        docker tag sample-app:latest ayushi250/private-repo/sample-app:latest
+        docker push ayushi250/private-repo/sample-app:latest 
